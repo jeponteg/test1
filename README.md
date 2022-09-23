@@ -1,71 +1,260 @@
-# Getting Started with Create React App
+# Custom Form Contact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- DOCS-IGNORE:start -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- DOCS-IGNORE:end -->
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The contact form is an app design to create dynamics forms through the information received it by props, for each type like input, select, text area and ReCAPTCHA, the app was developed with Reactjs and Grahql. All the information of each input is sent it to master data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuration
 
-### `npm test`
+ - Add the app as a dependency in your store theme
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+"vendorName.contact-form": "0.x"
+```
 
-### `npm run build`
+ - Example how integrate the app. 
+    The value of the dataEntity depends the name on masterdata, for this example the value is CF
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Custom Form Contact](https://i.ibb.co/gmYM4T2/dataentities.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+{
+    "store.custom#contacto":{
+        "blocks": ["formulario#dinamico"]
+    },
+   ...
+   "formulario#dinamico":{
+      "props":{
+        "dataEntity": "CF"
+      },
+        "children": [
+          "flex-layout.row#name",
+          "flex-layout.row#email",
+          "flex-layout.row#rut",
+          "flex-layout.row#phone",
+          "flex-layout.row#order",
+          "flex-layout.row#reason",
+          "flex-layout.row#message",
+          "flex-layout.row#captcha",
+          "flex-layout.row#submit"
+        ]
+      },
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+{
+   "input#name":{
+        "props":{
+            "nameInput": "name",
+            "placeholder": "type a name",
+            "id": "nameid", 
+            "type": "text",
+            "typeValidation": "letters",
+            "label": "name"
+        }
+      },
+    ...
 
-### `npm run eject`
+    ...
+      "input#submit":{
+        "props":{
+         "type": "submit"
+        }
+      }
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ - Configuration of queries.
+    -The value of account has to be the same as vendor on the store manifest.json, as shown in the picture below.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Custom Form Contact](https://i.ibb.co/9TpQM0S/Queries.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Type of inputs, validation and properties.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The dynamic form has 4 type of component and each one has different validation and properties. For all case, the props nameInput is required.
 
-## Learn More
+### Input
+ - This is an example how declare a input component:
+    ```
+        "input#name":{
+            "props":{
+            "nameInput": "name",
+            "placeholder": "type a name",
+            " id": "nameid", 
+            "type": "text",
+            "typeValidation": "letters",
+            "label": " name "
+            }
+        },
+    ```   
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Properties of Input.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - **nameInput:**   string *Name of the input, this is the key and must be the same name on master Data*
 
-### Code Splitting
+  - **placeholder:**  string *Text to show as placeholder*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  -  **id:** string  *Input ID*
 
-### Analyzing the Bundle Size
+  - **label:**  string *Input label*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  - **type:** string *Type of the input, for more information we recomend check the next [url]*
 
-### Making a Progressive Web App
+  - **required:** Boolean *Default value is false, if the input is required change to true*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  - **minlength:** Integer *minimum input length*
 
-### Advanced Configuration
+  - **maxlength:** Integer *maximum input length*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  - **readonly:**  Boolean *True if the input is readonly*
+  
+  - **value:** String *Value of the input*
+  
+  - **typeValidation:**  String *The typeValidation is a special validation made on JS, email, number, letters, curp,rut. Each one validate one type, like if input is a validate email or not*
+       
+  - **errorText** String *Text to show on error, this working only with the TypeValidation*
 
-### Deployment
+[url]: https://www.w3schools.com/html/html_form_input_types.asp
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Select
+ - This is an example how declare a select component:
 
-### `npm run build` fails to minify
+   ```
+        "select#reason":{
+            "props":{
+            "name": "Reason",
+            "id": "reason", 
+            "label": "Reason",
+            "valueObj": [
+            {
+                "value": "value on selection 0",
+                "text": "value on selection 0"
+            },
+            {
+                "value": "value on selection 1",
+                "text": "Text on selection 1",
+                "selected": true,
+            },
+            {
+                "value": "value on selection 2",
+                "text": "Text on selection 2"
+            },
+            {
+                "value": "value on selection 3",
+                "text": "Text on selection 3"
+            },
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# test1
+            {
+                "value": "value on selection 4",
+                "text": "Text on selection 4"
+            }
+            ]
+            }
+        }, 
+    ```
+
+### Properties of Select.
+
+  - **name:**  string *Name of the input, this is the key and must be the same name on master Data*
+
+  - **id:** string  *Input ID*
+
+  - **label:**  string *Input label*
+
+  - **selectMessage:**  string *Message from selected input*
+
+  - **valueObj:** object *Receive a object value and the properties are: value, text and selected this last one is a optional value as true, the default value of selected is false*
+ 
+### TextArea.
+
+ - This is an example how declare a TextArea component:
+
+    ```
+    "textarea#mensaje":{
+            "props":{
+            "nameInput": "message",
+            "placeholder": "type a message",
+            "id": "message", 
+            "label": "message",
+            "rows": "4",
+            "cols": "50"
+            }
+        },
+    ```
+
+### Properties of TextArea.
+
+ - **nameInput:**  string *Name of the input, this is the key and must be the same name on master Data*
+
+ - **id:** string  *Input ID*
+
+ - **label:**  string *Input label*
+
+ - **minlength:** Integer *minimum input length*
+
+ - **maxlength:** Integer *maximum input length*
+
+ - **required:** Boolean *Default value is false, if the input is required change to true*
+
+ - **readonly:**  Boolean *True if the input is readonly*
+
+ - **rows:** Integer *The number of visible lines*
+ 
+ - **cols:** Integer *The visible width of the text control, in half-width characters. If it is defined, it must be positive. If not, the default value is 20*
+
+### Captcha.
+
+ - This is an example how declare a Captcha component:
+    
+    ```
+   "captcha#ecomsur":{
+        "props":{
+          "captchaKey": "keyGenerateByGoogle"
+        }
+      },
+     ```  
+
+### Properties of Captcha.
+
+ - **captchaKey:**  string *This is a key generated by Google, you need to created it in the Google Panel Administrator and add the URL from the project. This props is required. The google version of the captcha is V2. For more information you can read on [Google]*
+
+[Google]: https://developers.google.com/recaptcha/docs/display
+
+## MasterData and the dynamycs inputs.
+
+The name of the input has to be the same name on masterdata. How you can see in the example below with email and name.
+
+### Name in Master Data
+
+![Custom Form Contact](https://i.ibb.co/FHGGq4t/master-Data.png)
+
+
+### Name in Dynamic Form
+
+![Custom Form Contact](https://i.ibb.co/TLwSx4X/masterdata-Name.png)
+
+<!-- DOCS-IGNORE:start -->
+
+## Contributors ✨
+
+Thanks goes to these wonderful people:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+- Carlos Deseda
+- Duglas Medina
+- Jose Martinez
+
+<!-- DOCS-IGNORE:end -->
