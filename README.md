@@ -136,3 +136,6 @@ docker-compose up
 | color         | string                          | Description |
 | variante      | 'vBar', 'hBar', 'circle'        | Description |
 | size          | 'xs', 'sm', 'md', 'lg', 'full'  | Description |
+
+
+[To see the effects of applying these pros, you can visit the following link: ](https://self-service-cenco-ux-components.ecomm-stg.cencosud.com/?path=/story/components-commons-layout-skeleton--horizontal-bar)
