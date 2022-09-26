@@ -139,3 +139,5 @@ docker-compose up
 
 
 [To see the effects of the application of these pros, you can click on this link](https://self-service-cenco-ux-components.ecomm-stg.cencosud.com/?path=/story/components-commons-layout-skeleton--horizontal-bar)
+
+## Customization
