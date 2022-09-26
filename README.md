@@ -130,10 +130,10 @@ docker-compose up
 ## Props
 
 
-| Prop name     | type                        | Description |
-| ------------- | --------------------------- | ----------- |
-| classes       | string                      | Description |
-| Color         | string                      | Description |
-| variante      | 'vBar', 'hBar', 'circle'    | Description |
-| type          | string                      | Description |
-| size          | 'xs','sm','md','lg','full'  | Description |
+| Prop name     | type                            | Description |
+| ------------- | --------------------------------| ----------- |
+| classes       | string                          | Description |
+| Color         | string                          | Description |
+| variante      | 'vBar', 'hBar', 'circle'        | Description |
+| type          | string                          | Description |
+| size          | 'xs', 'sm', 'md', 'lg', 'full'  | Description |
