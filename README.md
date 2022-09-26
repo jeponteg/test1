@@ -132,10 +132,10 @@ docker-compose up
 
 | Prop name     | type                            | Description |
 | ------------- | --------------------------------| ----------- |
-| classes       | string                          | Description |
-| color         | string                          | Description |
-| variante      | 'vBar', 'hBar', 'circle'        | Description |
-| size          | 'xs', 'sm', 'md', 'lg', 'full'  | Description |
+| classes       | string                          | This prop receives the css classes from the Tailwin framework tailwindcss                            |
+| color         | string                          | This pro changes the color of the component                                                          |
+| variante      | 'vBar', 'hBar', 'circle'        | Variants are the forms that your component can be adapted to. (circle, horizontal bar, vertical bar) |
+| size          | 'xs', 'sm', 'md', 'lg', 'full'  | This prop is used to set the size of the component                                                   |
 
 
 [To see the effects of the application of these pros, you can click on this link](https://self-service-cenco-ux-components.ecomm-stg.cencosud.com/?path=/story/components-commons-layout-skeleton--horizontal-bar)
