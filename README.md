@@ -147,7 +147,8 @@ In order to apply CSS customizations in this aplication, follow the instructions
 This css framework is configured in the project to use the "tw-" prefix
 
 ```bash
-  ## For example:
+  # example:
+  
   <Skeleton classes="tw-h-[22px] tw-w-[99px] tw-mb-2"/>
 
 ```
