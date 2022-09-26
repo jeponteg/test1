@@ -1,260 +1,124 @@
-# Custom Form Contact
+# mf-app-resume-skeleton-easy
 
-<!-- DOCS-IGNORE:start -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+## Getting started
 
+**Update your Atom name!**\
+Open your terminal an run this command to update the name of your Atom in all required files:
 
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<!-- DOCS-IGNORE:end -->
-
-
-The contact form is an app design to create dynamics forms through the information received it by props, for each type like input, select, text area and ReCAPTCHA, the app was developed with Reactjs and Grahql. All the information of each input is sent it to master data.
-
-## Configuration
-
- - Add the app as a dependency in your store theme
-
-```
-"vendorName.contact-form": "0.x"
+```bash
+npx replace 'apps-template' '<your-atom-name>' package.json package-lock.json tsconfig.json webpack.config.js
 ```
 
- - Example how integrate the app. 
-    The value of the dataEntity depends the name on masterdata, for this example the value is CF
+Then, rename the entypoint file with the name of your atom
 
-![Custom Form Contact](https://i.ibb.co/gmYM4T2/dataentities.png)
-
-```
-{
-    "store.custom#contacto":{
-        "blocks": ["formulario#dinamico"]
-    },
-   ...
-   "formulario#dinamico":{
-      "props":{
-        "dataEntity": "CF"
-      },
-        "children": [
-          "flex-layout.row#name",
-          "flex-layout.row#email",
-          "flex-layout.row#rut",
-          "flex-layout.row#phone",
-          "flex-layout.row#order",
-          "flex-layout.row#reason",
-          "flex-layout.row#message",
-          "flex-layout.row#captcha",
-          "flex-layout.row#submit"
-        ]
-      },
-}
+```bash
+mv src/cencommerce-apps-template.tsx src/cencommerce-<your-atom-name>.tsx
 ```
 
-```
-{
-   "input#name":{
-        "props":{
-            "nameInput": "name",
-            "placeholder": "type a name",
-            "id": "nameid", 
-            "type": "text",
-            "typeValidation": "letters",
-            "label": "name"
-        }
-      },
-    ...
+**Configure your NPM_CENCO_TOKEN**\
+Required to install @library/cenco-ux-components
 
-    ...
-      "input#submit":{
-        "props":{
-         "type": "submit"
-        }
-      }
-}
+```bash
+# Generate your token in Gitlab > Preferences > Access Tokens > scope "read_api"
+
+export NPM_CENCO_TOKEN=<put your token generated here>
 ```
 
- - Configuration of queries.
-    -The value of account has to be the same as vendor on the store manifest.json, as shown in the picture below.
+**Install node dependencies**
 
-![Custom Form Contact](https://i.ibb.co/9TpQM0S/Queries.png)
+```bash
+npm install
+```
 
-## Type of inputs, validation and properties.
+## Folders structure
 
-The dynamic form has 4 type of component and each one has different validation and properties. For all case, the props nameInput is required.
+The src folder is structure following [atomic design](https://bradfrost.com/blog/post/atomic-web-design/) pattern:
 
-### Input
- - This is an example how declare a input component:
-    ```
-        "input#name":{
-            "props":{
-            "nameInput": "name",
-            "placeholder": "type a name",
-            " id": "nameid", 
-            "type": "text",
-            "typeValidation": "letters",
-            "label": " name "
-            }
-        },
-    ```   
+- Atoms
+- Molecules
+- Organisms
+- Templates
+- Pages
 
-### Properties of Input.
+So put your components in the proper folder, and the storybook title must keep the same structure e.g.
 
-  - **nameInput:**   string *Name of the input, this is the key and must be the same name on master Data*
+```js
+const meta: Meta = {
+  title: 'Atoms/Title',
+  component: Title,
+};
+```
 
-  - **placeholder:**  string *Text to show as placeholder*
+## Run commands
 
-  -  **id:** string  *Input ID*
+Run microfront **storybook**:
 
-  - **label:**  string *Input label*
+```bash
+# next command start storybook in http://localhost:6006
 
-  - **type:** string *Type of the input, for more information we recomend check the next [url]*
+npm run storybook
+```
 
-  - **required:** Boolean *Default value is false, if the input is required change to true*
+Run microfront in **standalone mode**:
 
-  - **minlength:** Integer *minimum input length*
+```bash
+# next command start your microfront in http://localhost:8080
 
-  - **maxlength:** Integer *maximum input length*
+npm run start:standalone
+```
 
-  - **readonly:**  Boolean *True if the input is readonly*
-  
-  - **value:** String *Value of the input*
-  
-  - **typeValidation:**  String *The typeValidation is a special validation made on JS, email, number, letters, curp,rut. Each one validate one type, like if input is a validate email or not*
-       
-  - **errorText** String *Text to show on error, this working only with the TypeValidation*
+Run microfront in **server mode**:
 
-[url]: https://www.w3schools.com/html/html_form_input_types.asp
+```bash
+# next command start your microfront in http://localhost:8080 to be used in the root-config
 
-### Select
- - This is an example how declare a select component:
+npm run start
+```
 
-   ```
-        "select#reason":{
-            "props":{
-            "name": "Reason",
-            "id": "reason", 
-            "label": "Reason",
-            "valueObj": [
-            {
-                "value": "value on selection 0",
-                "text": "value on selection 0"
-            },
-            {
-                "value": "value on selection 1",
-                "text": "Text on selection 1",
-                "selected": true,
-            },
-            {
-                "value": "value on selection 2",
-                "text": "Text on selection 2"
-            },
-            {
-                "value": "value on selection 3",
-                "text": "Text on selection 3"
-            },
+## Running using Docker
 
-            {
-                "value": "value on selection 4",
-                "text": "Text on selection 4"
-            }
-            ]
-            }
-        }, 
-    ```
+Copy your NPM_CENCO_TOKEN in your **.env** file
 
-### Properties of Select.
+```bash
+# Generate your token in Gitlab > Preferences > Access Tokens > scope "read_api"
 
-  - **name:**  string *Name of the input, this is the key and must be the same name on master Data*
+NPM_CENCO_TOKEN=<put your token generated here>
+```
 
-  - **id:** string  *Input ID*
+Build the microfront service:
 
-  - **label:**  string *Input label*
+```bash
+docker-compose build
+```
 
-  - **selectMessage:**  string *Message from selected input*
+Run microfront **storybook**:
 
-  - **valueObj:** object *Receive a object value and the properties are: value, text and selected this last one is a optional value as true, the default value of selected is false*
- 
-### TextArea.
+```bash
+# next command start storybook in http://localhost:6006
 
- - This is an example how declare a TextArea component:
+docker-compose run --rm -p 6006:6006 mf-app npm run storybook
+```
 
-    ```
-    "textarea#mensaje":{
-            "props":{
-            "nameInput": "message",
-            "placeholder": "type a message",
-            "id": "message", 
-            "label": "message",
-            "rows": "4",
-            "cols": "50"
-            }
-        },
-    ```
+Run microfront in **standalone mode**:
 
-### Properties of TextArea.
+```bash
+# next command start your microfront in http://localhost:8080
 
- - **nameInput:**  string *Name of the input, this is the key and must be the same name on master Data*
+docker-compose run --rm -p 8080:8080 mf-app npm run start:standalone
+```
 
- - **id:** string  *Input ID*
+Run the microfront in **server mode**:
 
- - **label:**  string *Input label*
+```bash
+# next command start your microfront in http://localhost:8080 to be used in the root-config
 
- - **minlength:** Integer *minimum input length*
+docker-compose run --rm -p 8080:8080 mf-app
+```
 
- - **maxlength:** Integer *maximum input length*
+Build and Start the microfront in **server mode**:
 
- - **required:** Boolean *Default value is false, if the input is required change to true*
+```bash
+# next command start your microfront in http://localhost:8080 to be used in the root-config
 
- - **readonly:**  Boolean *True if the input is readonly*
-
- - **rows:** Integer *The number of visible lines*
- 
- - **cols:** Integer *The visible width of the text control, in half-width characters. If it is defined, it must be positive. If not, the default value is 20*
-
-### Captcha.
-
- - This is an example how declare a Captcha component:
-    
-    ```
-   "captcha#ecomsur":{
-        "props":{
-          "captchaKey": "keyGenerateByGoogle"
-        }
-      },
-     ```  
-
-### Properties of Captcha.
-
- - **captchaKey:**  string *This is a key generated by Google, you need to created it in the Google Panel Administrator and add the URL from the project. This props is required. The google version of the captcha is V2. For more information you can read on [Google]*
-
-[Google]: https://developers.google.com/recaptcha/docs/display
-
-## MasterData and the dynamycs inputs.
-
-The name of the input has to be the same name on masterdata. How you can see in the example below with email and name.
-
-### Name in Master Data
-
-![Custom Form Contact](https://i.ibb.co/FHGGq4t/master-Data.png)
-
-
-### Name in Dynamic Form
-
-![Custom Form Contact](https://i.ibb.co/TLwSx4X/masterdata-Name.png)
-
-<!-- DOCS-IGNORE:start -->
-
-## Contributors ✨
-
-Thanks goes to these wonderful people:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-- Carlos Deseda
-- Duglas Medina
-- Jose Martinez
-
-<!-- DOCS-IGNORE:end -->
+docker-compose up
+```
