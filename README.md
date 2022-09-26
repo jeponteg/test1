@@ -129,6 +129,11 @@ docker-compose up
 
 ## Usage
 
+To make use of Microfrontend in your main container you must install the following dependency:
+
+```bash
+    #  npm install @mfe-app-resume-skeleton-easy/app
+```
 ## Props
 
 
