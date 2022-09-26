@@ -124,3 +124,11 @@ Build and Start the microfront in **server mode**:
 
 docker-compose up
 ```
+
+## Props
+
+
+| Prop name     | type          | Description |
+| ------------- | ------------- | ----------- |
+| Content Cell  | Content Cell  | Description |
+| Content Cell  | Content Cell  | Description |
