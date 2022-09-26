@@ -1,5 +1,7 @@
 # mf-app-resume-skeleton-easy
 
+This Microfrontend previews your content before the data is loaded to reduce load time frustration.
+
 ## Getting started
 
 **Update your Atom name!**\
