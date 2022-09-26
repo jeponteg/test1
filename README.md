@@ -135,5 +135,4 @@ docker-compose up
 | classes       | string                          | Description |
 | color         | string                          | Description |
 | variante      | 'vBar', 'hBar', 'circle'        | Description |
-| type          | string                          | Description |
 | size          | 'xs', 'sm', 'md', 'lg', 'full'  | Description |
