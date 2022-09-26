@@ -143,3 +143,11 @@ docker-compose up
 ## Customization
 
 In order to apply CSS customizations in this aplication, follow the instructions given in the recipe on Using CSS with [tailwindcss](https://tailwindcss.com/)
+
+This css framework is configured in the project to use the "tw_" prefix
+
+```bash
+
+  <Skeleton classes="tw-h-[22px] tw-w-[99px] tw-mb-2"/>
+
+```
