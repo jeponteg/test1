@@ -133,12 +133,9 @@ docker-compose up
 
 
 | Prop name     | type                            | Description                                                                                          |
-| ------------- | --------------------------------| ---------------------------------------------------------------------------------------------------- | |                
+| ------------- | --------------------------------| -----------------------------------------------------------------------------------------------------| 
 | classes       | string                          | This prop receives the css classes from the framework tailwindcss                                    |
-| color         | 'neutral-50',                   |
-|               |   'neutral-100'                 |
-|               |   'neutral-200'                 |
-|               |   'neutral-300'                 | This pro changes the color of the component                                                          |  |               |                                 |
+| color         | string                          | This pro changes the color of the component                                                          | 
 | variante      | 'vBar', 'hBar', 'circle'        | Variants are the forms that your component can be adapted to. (circle, horizontal bar, vertical bar) |
 | size          | 'xs', 'sm', 'md', 'lg', 'full'  | This prop is used to set the size of the component                                                   |
 
