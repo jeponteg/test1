@@ -2,6 +2,8 @@
 
 This Microfrontend previews your content before the data is loaded to reduce load time frustration.
 
+![mf-app-resume-skeleton-easy](https://i.ibb.co/fpzPNPF/Captura-de-Pantalla-2022-09-26-a-la-s-09-35-37.png)
+
 ## Getting started
 
 **Update your Atom name!**\
