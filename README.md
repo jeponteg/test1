@@ -1,6 +1,6 @@
 # mfe-app-resume-header/app
 
-This Microfrontend previews your content before the data is loaded to reduce load time frustration.
+This Microfrontend displays a view of the header in the my purchases session.
 
 ![mfe-app-resume-header/app](https://i.ibb.co/xS368ff/Captura-de-Pantalla-2022-10-04-a-la-s-12-58-02.png)
 
