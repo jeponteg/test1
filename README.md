@@ -1,13 +1,11 @@
-# mfe-app-resume-header/app
+# mf-app-resume-header
 
-This Microfrontend displays a view of the header in the my purchases session.
-
-![mfe-app-resume-header/app](https://i.ibb.co/xS368ff/Captura-de-Pantalla-2022-10-04-a-la-s-12-58-02.png)
+- Microfrontend application of the header of the resume page.
 
 ## Getting started
 
-**Configure your NPM_CENCO_TOKEN**\
-Required to install @mfe-app-resume-header/app
+Configure your **NPM_CENCO_TOKEN**
+Required to install @library/cenco-ux-components
 
 ```bash
 # Generate your token in Gitlab > Preferences > Access Tokens > scope "read_api"
@@ -15,14 +13,11 @@ Required to install @mfe-app-resume-header/app
 export NPM_CENCO_TOKEN=<put your token generated here>
 ```
 
-**Install node dependencies**
+Install dependencies
 
 ```bash
 npm install
 ```
-
-
-## Run commands
 
 Run microfront **storybook**:
 
@@ -77,7 +72,7 @@ Run microfront in **standalone mode**:
 ```bash
 # next command start your microfront in http://localhost:8080
 
-docker-compose run --rm -p 8080:8080 mf-app npm run start:standalone
+docker-compose run --rm --service-ports mf-app npm run start:standalone
 ```
 
 Run the microfront in **server mode**:
@@ -85,7 +80,7 @@ Run the microfront in **server mode**:
 ```bash
 # next command start your microfront in http://localhost:8080 to be used in the root-config
 
-docker-compose run --rm -p 8080:8080 mf-app
+docker-compose run --rm --service-ports mf-app
 ```
 
 Build and Start the microfront in **server mode**:
@@ -96,43 +91,11 @@ Build and Start the microfront in **server mode**:
 docker-compose up
 ```
 
-v0.0.4 [CCMR-91640]
-Changed
+## v2.0.0 [POST-4677]
 
+**Changed**
 
-SPA
-
-Uninstall devDependencies spa
-
-
-
-Design
-
-redesing components to structure mock with mf
-
-
-
-Button
-
-Add class to differentes size in mobile and desktop
-
-
-
-Themes
-
-Extends colors cenco-ux-components
-
-
-
-library-classes
-
-Implements @library-classes/types.
-
-
-
-## Pending
-
-
-Icon
-
-Received squareBorder props
+- `SPA`
+  - Uninstall devDependencies spa
+- `library-classes`
+  - Implements [@library-classes/types](https://gitlab.com/cencosud-ds/cencommerce/post-purchase-experience/my-purchases/mf-classes-package).
