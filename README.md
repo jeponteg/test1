@@ -96,3 +96,43 @@ Build and Start the microfront in **server mode**:
 docker-compose up
 ```
 
+v0.0.4 [CCMR-91640]
+Changed
+
+
+SPA
+
+Uninstall devDependencies spa
+
+
+
+Design
+
+redesing components to structure mock with mf
+
+
+
+Button
+
+Add class to differentes size in mobile and desktop
+
+
+
+Themes
+
+Extends colors cenco-ux-components
+
+
+
+library-classes
+
+Implements @library-classes/types.
+
+
+
+## Pending
+
+
+Icon
+
+Received squareBorder props
