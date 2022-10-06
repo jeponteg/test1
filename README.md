@@ -1,6 +1,8 @@
 # mf-app-resume-header
 
-- Microfrontend application of the header of the resume page.
+- This application shows the header of the purchase summary session.
+
+![Desktop](https://i.ibb.co/PtJLz5t/Captura-de-Pantalla-2022-10-06-a-la-s-19-25-32.png)
 
 ## Getting started
 
