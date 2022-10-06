@@ -90,12 +90,3 @@ Build and Start the microfront in **server mode**:
 
 docker-compose up
 ```
-
-## v2.0.0 [POST-4677]
-
-**Changed**
-
-- `SPA`
-  - Uninstall devDependencies spa
-- `library-classes`
-  - Implements [@library-classes/types](https://gitlab.com/cencosud-ds/cencommerce/post-purchase-experience/my-purchases/mf-classes-package).
