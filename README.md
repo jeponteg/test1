@@ -1,94 +1,17 @@
-# mf-app-resume-header
+# 0.0.1
 
-- This application shows the header of the purchase summary session.
+### Init base library proyect for DTO'S of self-service
 
-![Desktop](https://i.ibb.co/PtJLz5t/Captura-de-Pantalla-2022-10-06-a-la-s-19-25-32.png)
+# 0.0.2
 
-## Getting started
+### Update exports and types
 
-Configure your **NPM_CENCO_TOKEN**
-Required to install @library/cenco-ux-components
+# 0.1.0
+### First stable version 
 
-```bash
-# Generate your token in Gitlab > Preferences > Access Tokens > scope "read_api"
+# 1.2.2
 
-export NPM_CENCO_TOKEN=<put your token generated here>
-```
+### Update interface TimeFrameFilterProps
 
-Install dependencies
-
-```bash
-npm install
-```
-
-Run microfront **storybook**:
-
-```bash
-# next command start storybook in http://localhost:6006
-
-npm run storybook
-```
-
-Run microfront in **standalone mode**:
-
-```bash
-# next command start your microfront in http://localhost:8080
-
-npm run start:standalone
-```
-
-Run microfront in **server mode**:
-
-```bash
-# next command start your microfront in http://localhost:8080 to be used in the root-config
-
-npm run start
-```
-
-## Running using Docker
-
-Copy your NPM_CENCO_TOKEN in your **.env** file
-
-```bash
-# Generate your token in Gitlab > Preferences > Access Tokens > scope "read_api"
-
-NPM_CENCO_TOKEN=<put your token generated here>
-```
-
-Build the microfront service:
-
-```bash
-docker-compose build
-```
-
-Run microfront **storybook**:
-
-```bash
-# next command start storybook in http://localhost:6006
-
-docker-compose run --rm -p 6006:6006 mf-app npm run storybook
-```
-
-Run microfront in **standalone mode**:
-
-```bash
-# next command start your microfront in http://localhost:8080
-
-docker-compose run --rm --service-ports mf-app npm run start:standalone
-```
-
-Run the microfront in **server mode**:
-
-```bash
-# next command start your microfront in http://localhost:8080 to be used in the root-config
-
-docker-compose run --rm --service-ports mf-app
-```
-
-Build and Start the microfront in **server mode**:
-
-```bash
-# next command start your microfront in http://localhost:8080 to be used in the root-config
-
-docker-compose up
-```
+### Update interface SearchboxProps
+### Created interface SearchboxProps InputSearch (easy)
