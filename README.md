@@ -17,8 +17,8 @@ The src folder is structure following [atomic design](https://bradfrost.com/blog
 
 ## Getting started
 
-:wrench: **Configure your NPM_CENCO_TOKEN**\
-Required to install @library/cenco-ux-components
+:wrench:  **Configure your NPM_CENCO_TOKEN**\
+  Required to install @library/cenco-ux-components
 
 ```bash
 # Generate your token in Gitlab > Preferences > Access Tokens > scope "read_api"
