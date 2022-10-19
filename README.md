@@ -17,7 +17,7 @@ The src folder is structure following [atomic design](https://bradfrost.com/blog
 
 ## Getting started
 
-**Configure your NPM_CENCO_TOKEN**\
+** :wrench: Configure your NPM_CENCO_TOKEN**\
 Required to install @library/cenco-ux-components
 
 ```bash
