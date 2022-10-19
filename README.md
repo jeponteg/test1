@@ -4,6 +4,17 @@ This application allows the user to filter their purchases.
 
 ![mf-app-resume-searchbox-easy](https://i.ibb.co/hFxd3Vx/Captura-de-Pantalla-2022-10-18-a-la-s-22-11-56.png)
 
+## Folders structure
+
+The src folder is structure following [atomic design](https://bradfrost.com/blog/post/atomic-web-design/) pattern:
+
+- :file_folder: Atoms
+- :file_folder: Molecules
+- :file_folder: Organisms
+- :file_folder: Templates
+- :file_folder: Pages
+
+
 ## Getting started
 
 **Configure your NPM_CENCO_TOKEN**\
@@ -20,16 +31,6 @@ export NPM_CENCO_TOKEN=<put your token generated here>
 ```bash
 npm install
 ```
-
-## Folders structure
-
-The src folder is structure following [atomic design](https://bradfrost.com/blog/post/atomic-web-design/) pattern:
-
-- Atoms
-- Molecules
-- Organisms
-- Templates
-- Pages
 
 So put your components in the proper folder, and the storybook title must keep the same structure e.g.
 
